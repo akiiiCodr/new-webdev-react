@@ -1,0 +1,2292 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+
+
+}
+
+
+.container-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background-color: hsl(0, 100%, 50%); /* Similar to your image background */
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Glassmorphism Effect for Login and Sign-Up Buttons */
+.login,
+.sign-up {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+  border-radius: 4px;
+  backdrop-filter: blur(10px); /* Blur effect for the glassmorphism */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.login:hover,
+.sign-up:hover {
+  background: rgba(255, 255, 255, 0.3); /* Slightly more opaque on hover */
+  border-color: rgba(255, 255, 255, 0.5); /* Border color changes on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.sign-up {
+  margin-left: 10px; /* Space between the buttons */
+}
+
+
+.title-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.title-section h1 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.title-section p {
+  font-size: 0.9rem;
+  color: rgb(70, 70, 70);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+.notification {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.share-idea {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(55, 55, 55);
+  background: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: rgb(55, 55, 55);
+  border-radius: 4px;
+}
+
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(142, 142, 142);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.reviews-container {
+  padding: 2rem;
+  background-color: #f1f3f5;
+}
+
+.image-gallery {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.image-placeholder {
+  flex: 1;
+  height: 150px;
+  background-color: #e2e3e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #a8a8a8;
+}
+
+.rating {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.rating .star {
+  color: #ffb400;
+}
+
+.review-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.review-item {
+  display: flex;
+  gap: 1rem;
+  width: calc(50% - 1rem);
+  align-items: flex-start;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #9e9e9e;
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.review-content {
+  font-size: 0.9rem;
+}
+
+.review-content strong {
+  font-weight: bold;
+  color: #333;
+}
+
+.review-content p {
+  color: #666;
+}
+
+.message-icon {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  background-color: #444;
+  color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+
+/* USERSCREEN */
+
+/* Main Content Styles */
+.content {
+  display: flex;
+  padding: 1rem;
+  background-color: #f3f3f3;
+}
+
+.image-gallery {
+  display: flex;
+  gap: 1rem;
+  flex: 3;
+}
+
+.image-placeholder {
+  background-color: #e0e0e0;
+  height: 150px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.review-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.review-card {
+  background-color: #d3d3d3;
+  height: 80px;
+  border-radius: 8px;
+}
+
+/* WEBSCREEN */
+
+/* Content Section */
+/* Login Section */
+
+        body {
+          font-family: Arial, sans-serif;
+      }
+      
+      .menu-bar {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .menu-button {
+        padding: 10px 20px;
+        background-color: rgba(22, 65, 84, 0.8); /* Semi-transparent background */
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        backdrop-filter: blur(8px); /* Frosted glass effect */
+        -webkit-backdrop-filter: blur(8px); /* For Safari */
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      
+      .menu-button:hover {
+        background-color: rgba(22, 65, 84, 1); /* Fully opaque on hover */
+        transform: scale(1.05); /* Slight zoom effect */
+      }
+      
+      .dropdown {
+        display: none; /* Hidden by default */
+        background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+        backdrop-filter: blur(10px); /* Frosted glass effect */
+        -webkit-backdrop-filter: blur(10px); /* For Safari */
+        position: absolute;
+        min-width: 160px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        z-index: 1;
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for glass effect */
+      }
+      
+      .dropdown.active {
+        display: block; /* Show the dropdown when the 'active' class is applied */
+      }
+      
+      /* Remove bullets from the list */
+      .dropdown ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      /* Style the list items */
+      .dropdown li {
+        padding: 10px;
+      }
+      
+      /* Style the anchor tags inside the list items */
+      .dropdown li a {
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.3); /* Slightly transparent background */
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      
+      .dropdown li a:hover {
+        background-color: rgba(255, 255, 255, 0.6); /* Brighter on hover */
+        transform: scale(1.05); /* Slight zoom effect */
+      }
+      
+      /* Menu items */
+      .menu-item {
+        display: block;
+        padding: 10px 20px;
+        color: black;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        background: rgba(255, 255, 255, 0.2); /* Glass effect */
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 5px;
+      }
+      
+      .menu-item:hover {
+        background-color: rgba(255, 255, 255, 0.6); /* Brighter hover effect */
+      }
+      
+.login-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+.login-box h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.login-box p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.forgot-password {
+  display: block;
+  text-align: right;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #5679ff;
+  text-decoration: none;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #5679ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.signup-text {
+  text-align: center;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: #5679ff;
+  text-decoration: none;
+}
+
+/* Availability Section */
+.availability {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.availability input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.availability button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* SIGNUP.html */
+
+.container {
+  width: 900px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Section */
+header.logo {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+header img {
+  width: 100px;
+}
+
+/* Form Layout */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Form Body */
+.form-body {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.left-form, .right-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color: #f1f3f5;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.input-group input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  color: #555;
+}
+
+.input-group .icon {
+  margin-right: 10px;
+  color: #888;
+}
+
+/* Password Group */
+.password-group {
+  position: relative;
+}
+
+.password-group .toggle-password {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #888;
+}
+
+/* Submit Button */
+.form-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-button {
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #333;
+}
+
+
+/* USER_MENU.html */
+
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #f1f1f1;
+  overflow: hidden;
+}
+
+  .notification {
+    font-size: 24px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+  }
+  .notification-content {
+    display: none;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .notification-item {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  .notification-item:last-child {
+    border-bottom: none;
+  }
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #b0b0b0;
+  padding-top: 20px;
+  position: fixed;
+  left: -250px; /* Hidden by default */
+  height: 100%;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar a {
+  padding: 15px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
+  display: block;
+}
+
+.sidebar .logout {
+  margin-top: auto;
+  padding: 15px;
+  background-color: #999;
+  color: white;
+  text-align: center;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+.main.active {
+  margin-left: 250px;
+}
+
+/* Navigation Header */
+.container-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+}
+
+.title-section h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.title-section p {
+  margin: 0;
+  color: #666;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.availability, .calendar, .notification, .share-idea, .profile-circle {
+  margin-left: 10px;
+}
+
+.availability {
+  background-color: #e0e0e0;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.calendar, .notification {
+  font-size: 20px;
+}
+
+.share-idea {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Image Grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.image {
+  background-color: #d0d0d0;
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image.large {
+  grid-column: span 1;
+  height: 200px;
+}
+
+.image.small {
+  height: 100px;
+}
+
+/* Floating Button */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Toggle Button (Menu Icon) */
+.menu-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+/* PAYMENT.html */
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #f1f1f1;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding-top: 20px;
+  position: fixed;
+  left: -250px; /* Hidden by default */
+  height: 100%;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar a {
+  padding: 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+  display: block;
+}
+
+/* Main Content */
+.main {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+}
+
+.main.active {
+  margin-left: 250px;
+}
+
+/* Navigation Header */
+.container-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-image: url(./assets/header.svg);
+  border-bottom: 1px solid #ddd;
+}
+
+.title-section h1 {
+  margin: 0;
+  font-size: 10px;
+}
+
+.title-section p {
+  margin: 0;
+  color: #666;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.availability-button, .calendar-button, .notification, .share-idea, .profile-circle {
+  margin-left: 15px;
+}
+
+/* Button Container */
+.right-header {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  align-items: center;
+}
+
+
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.availability-button,
+.calendar-button {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.3); /* Light, semi-transparent background */
+  color: #000; /* Black text */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for buttons */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.availability-button:hover,
+.calendar-button:hover {
+  background-color: rgba(255, 255, 255, 0.4); /* Slightly more opaque on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly more shadow on hover */
+}
+
+.availability-text,
+.date-text {
+  margin-left: 10px;
+}
+
+.calendar-icon {
+  font-size: 20px;
+}
+
+.calendar-button .date-text {
+  font-size: 14px;
+}
+
+/* Icon and Text Alignment */
+button i, button .calendar-icon {
+  font-size: 18px; /* Icon size */
+  display: inline-block;
+}
+
+button .availability-text, button .date-text {
+  font-size: 14px;
+  font-weight: normal;
+}
+.share-idea {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Payment Slip Section */
+.payment-slip-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: #f8d6d6;
+}
+
+.payment-slip {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.payment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.payment-header h3 {
+  margin: 0;
+}
+
+.rating {
+  font-size: 18px;
+  color: #4A90E2;
+}
+
+.payment-info {
+  margin-bottom: 20px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.pay-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.confirmation-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Toggle Button (Menu Icon) */
+.menu-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+
+
+/* Left Sidebar */
+.left-sidebar {
+  width: 350px; /* Adjust width based on sidebar size */
+  padding: 10px;
+  height: 80vh; /* Full height of the viewport */
+  overflow-y: auto; /* Allows scrolling if content overflows */
+  float: left; /* Makes the sidebar float to the left */
+}
+
+.rectangle {
+  width: 100%; /* Full width of the sidebar */
+  height: 60px; /* Rectangle height */
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #fff; /* White text for contrast */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for glassmorphic effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effect transitions */
+}
+
+/* Hover Effect */
+.rectangle:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+
+/* Content Viewer beside Sidebar */
+.content-viewer {
+  margin-left: 210px; /* Space between sidebar and content viewer */
+  padding: 20px;
+  height: 80vh; /* Same height as the sidebar */
+  overflow-y: auto; /* Allows scrolling if content is too long */
+  display: block; /* Ensures it's positioned beside the sidebar */
+}
+
+/* Content Styling */
+.viewer-content {
+  font-family: Arial, sans-serif;
+  color: #333;
+  font-size: 16px;
+  display: none; /* Hide by default */
+}
+
+/* Show active content */
+.viewer-content.active {
+  display: block; /* Show content when active */
+}
+
+.menu-bar {
+  display: block; /* Optional: Hide menu button for now */
+}
+
+.title-section {
+  text-align: center;
+  flex-grow: 1; /* This makes sure the title is in the center */
+}
+
+.title-section h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  color: red;
+}
+
+.name-section {
+  display: flex;
+  flex-direction: column; /* Stack the items vertically */
+  align-items: center; /* Horizontally center the content */
+  text-align: center; /* Center the text inside each element */
+}
+
+.name-section h1 {
+  font-size: 2rem; /* Adjust to a smaller size */
+  margin: 0; /* Remove default margin */
+}
+
+.name-section p {
+  font-size: 1rem; /* Adjust to a smaller size */
+  margin: 0; /* Remove default margin */
+}
+
+
+.title-section p {
+  font-size: 1rem;
+  color: rgb(70, 70, 70);
+  margin: 0
+}
+
+.right-header {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between actions (bed and calendar) and login/signup buttons */
+}
+
+/* Container for the calendar and bed availability */
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between the boxes */
+}
+
+/* Bed Availability Box */
+.availability-box {
+  width: 200px; /* Adjust width as needed */
+  height: 25px; /* Adjust height as needed */
+  background-color: #e0f7fa; /* Example background */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 0; /* Remove any margin */
+}
+
+/* Calendar Box */
+.calendar-box {
+  width: 200px; /* Adjust width as needed */
+  height: 25px; /* Adjust height as needed */
+  background-color: #fff3e0; /* Example background */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 0; /* Remove any margin */
+}
+
+.availability-text {
+  font-size: .7rem; /* Smaller font size */
+}
+
+.calendar-icon {
+  margin-left: 0px; /* Space between the icon and the date */
+}
+
+.availability-icon,
+.calendar-icon {
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.date-text {
+  font-size: 0.7rem; /* Adjusted text size for a smaller font */
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Hamburger Menu */
+.menu-bar {
+  position: relative;
+}
+
+#hamburger-menu {
+  position: absolute;
+  top: 100%; /* Position the menu below the button */
+  left: 0; /* Align to the right edge of the parent container */
+  width: 200px; /* Adjust width as needed */
+  background-color: #ffffff; /* Background color */
+  border: 1px solid #ddd; /* Optional: Border styling */
+  border-radius: 5px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Box shadow for a modern look */
+  padding: 10px;
+  display: none; /* Hidden by default */
+  z-index: 1000; /* Ensure it's above other elements */
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+#hamburger-menu.visible {
+  display: flex; /* Show the menu when toggled */
+  right: 0;
+}
+
+#hamburger-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  right: 0;
+}
+
+#hamburger-menu ul li {
+  margin-bottom: 10px; /* Space between items */
+  right: 0;
+}
+
+#hamburger-menu ul li:last-child {
+  margin-bottom: 0;
+  right: 0;
+}
+
+#hamburger-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  padding: 8px 12px;
+  display: block;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  right: 0;
+}
+
+#hamburger-menu ul li a:hover {
+  background-color: #f0f0f0; /* Optional: Hover effect */
+}
+
+
+
+
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Card */
+.modal-card {
+  background-color: hsla(0, 0%, 100%, 0.299);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 1000px;
+  height: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slide-in 0.3s ease-out; /* Optional: Add a slide-in animation */
+}
+
+/* Modal Title */
+.modal-card h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* Buttons inside modal card (Horizontal layout) */
+.modal-buttons {
+  display: flex;
+  justify-content: space-around; /* Space out the buttons horizontally */
+  width: 100%;
+}
+
+/* Modal Button */
+.modal-button {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #067898;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column; /* Align text and icon vertically */
+}
+
+.modal-button i {
+  font-size: 50px; /* Icon size */
+  margin-bottom: 10px; /* Space between icon and text */
+}
+
+.modal-button:hover {
+  background-color: #adadad;
+}
+
+/* Optional: Slide-in animation for the modal card */
+@keyframes slide-in {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.room-booking-form {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.room-booking-form h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Form Group Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.form-group span {
+  color: red;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+.name-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.name-fields input {
+  flex: 1;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.radio-group label {
+  font-weight: normal;
+}
+
+.radio-group input {
+  margin-right: 5px;
+}
+
+/* Total Amount */
+.total-amount {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 8px;
+  text-align: center;
+}
+
+
+
+
+
+/* Reserve Button */
+.reserve {
+  display: flex;
+  background-color: #046c98;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 1px 0.5px black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.reserve:hover {
+  background-color: #ffffffe1;
+  color: #046c98;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .name-fields {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
+
+.contact-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  background-image: url(./assets/gradient-image.svg);
+}
+
+.contact-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 1rem;
+  }
+}
+
+
+
+
+
+
+.bot-container {
+  max-width: 600px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.chat-window {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.chat-message {
+  padding: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-message p {
+  margin: 0;
+}
+
+.input-area {
+  display: flex;
+  gap: 5px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-area button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.input-area button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+.tenant-menu {
+  width: 100%;
+  background-color: hsla(0, 0%, 100%, 0);
+  color: #000000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.hamburger-menu {
+  font-size: 24px;
+  background: none;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 15px;
+}
+
+.menu-item {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.menu-item:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+  
+  .navbar-right {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+  }
+
+  .navbar-right.open {
+    display: flex;
+  }
+
+  .menu-item {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+/* MODAL FOR TENANT REGISTRATION MODAL */
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Glassmorphic Modal container */
+.add_modal, .edit_modal {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+  position: relative;
+}
+
+
+/* Modal content */
+.add_modal h2, .edit_modal h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #fff; /* White text */
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Form fields */
+.add_modal input, .edit_modal input,
+.add_modal textarea, .edit_modal textarea,
+.add_modal select, .edit_modal select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+  color: #fff; /* White text */
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.add_modal input:focus, .edit_modal input:focus,
+.add_modal textarea:focus, .edit_modal textarea:focus,
+.add_modal select:focus, .edit_modal select:focus {
+  border-color: #007BFF;
+  background-color: rgba(255, 255, 255, 0.3); /* Slightly more opaque on focus */
+  outline: none;
+}
+
+/* Button styling */
+.add_modal button, .edit_modal button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(5px); /* Slight blur for buttons */
+}
+
+.add_modal button:hover, .edit_modal button:hover {
+  background-color: #0056b3;
+}
+
+/* Cancel Button */
+.add_modal .cancel-btn, .edit_modal .cancel-btn {
+  background-color: #f44336;
+}
+
+.add_modal .cancel-btn:hover, .edit_modal .cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Scrollable content in the modal */
+.add_modal, .edit_modal {
+  padding-bottom: 20px;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+/* Modal close button */
+.add_modal .close-btn, .edit_modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff; /* White color for close button */
+  cursor: pointer;
+}
+
+.add_modal .close-btn:hover, .edit_modal .close-btn:hover {
+  color: #f44336;
+}
+
+/* Modal content with overflow */
+.modal-content {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Button styles in the modal */
+.modal-actions button {
+  margin-right: 10px;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.modal input,
+.modal textarea {
+  width: 60%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+  border-radius: 4px;
+}
+
+.modal button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.modal button:hover {
+  background-color: #555;
+}
+
+
+
+
+/* TENANTS CARD */
+
+.tenants {
+  padding: 15px;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tenants ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tenants li {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  border-radius: 15px; /* Rounded corners */
+  margin-bottom: 50px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  transition: transform 0.5s, box-shadow 0.5s;
+  color: #fff; /* Set text color to white for contrast */
+}
+
+.tenants li:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  transform: translateY(-5px); /* Slightly raise the card on hover */
+}
+
+
+.tenants h2 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  color: hsla(0, 0%, 100%, 0.922);
+}
+
+.tenants p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: hsla(0, 0%, 100%, 0.922);
+}
+
+.tenants p > strong {
+  color: #333;
+}
+
+.tenants p:nth-child(odd) {
+  font-weight: bold;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+
+
+
+.not-clickable {
+  pointer-events: none; /* Prevents clicks */
+  opacity: 0.5; /* Makes it look disabled */
+}
+
+
+/* TENANT MENU - LEASE and EXTEND */
+
+/* Glassmorphic Effect for Modals */
+.modal-terminate, .modal-extend {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for better glass effect */
+  backdrop-filter: blur(12px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(12px); /* For Safari */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+  position: relative;
+  color: #fff; /* White text for contrast */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for glass effect */
+}
+
+/* Glassmorphic Effect for Modal Content */
+.modal-content-terminate, .modal-content-extend {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.25); /* Slightly more transparent background */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for content */
+  backdrop-filter: blur(10px); /* Slightly less blur for content */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  color: #000; /* Black text for better readability */
+  overflow-y: auto;
+  max-height: 80vh;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Content border for separation */
+}
+
+/* Modal Titles */
+.modal-terminate h2, .modal-extend h2 {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  color: #000; /* Black text for the title */
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Modal Buttons Container */
+.modal-actions {
+  display: flex;
+  justify-content: space-between; /* Even spacing between buttons */
+  gap: 20px; /* Add space between buttons */
+  margin-top: 20px;
+}
+
+/* Modal Buttons */
+.modal-terminate button, .modal-extend button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-terminate button:hover, .modal-extend button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Cancel Button */
+.modal-terminate .cancel-btn, .modal-extend .cancel-btn {
+  background-color: #f44336;
+}
+
+.modal-terminate .cancel-btn:hover, .modal-extend .cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Close Button */
+.modal-terminate .close-btn, .modal-extend .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-terminate .close-btn:hover, .modal-extend .close-btn:hover {
+  color: #f44336;
+  transform: rotate(90deg); /* Rotate on hover for effect */
+}
+
+/* Label and Input Styles */
+.modal-content-extend label {
+  display: block;
+  margin: 15px 0 5px;
+  font-size: 1rem;
+  color: #000; /* Black for contrast */
+}
+
+
+
+
+
+/* TENANT PAGE CSS */
+
+
+/* Sidebar Rectangles */
+.rectangle_tenant {
+  width: 100%; /* Full width of the sidebar */
+  height: 60px; /* Rectangle height */
+  background-color: hsl(200, 100%, 30%);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: hsl(0, 0%, 94%);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Content Viewer beside Sidebar */
+.content-viewer-tenant {
+  margin-left: 210px; /* Space between sidebar and content viewer */
+  padding: 20px;
+  height: 80vh; /* Same height as the sidebar */
+  overflow-y: auto; /* Allows scrolling if content is too long */
+  display: block; /* Ensures it's positioned beside the sidebar */
+}
+
+/* Content Styling */
+.viewer-content-tenant {
+  font-family: Arial, sans-serif;
+  color: #333;
+  font-size: 16px;
+  display: none; /* Hide by default */
+}
+
+/* Show active content */
+.viewer-content-tenant.active {
+  display: block; /* Show content when active */
+}
+
+/* REFRESH ANIMATION */
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-animate {
+  animation: spin 1s ease-in-out;
+}
+
+
+/* PAYMENTS TAB */
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+  font-size: 18px;
+}
+
+.navbar-title {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #4CAF50;
+  border: 1px solid #4CAF50;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar-buttons button:hover {
+  background-color: #45a049;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
+}
+
+form label {
+  font-size: 16px;
+  color: #fff;
+}
+
+form select,
+form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+/* Payment Status Display */
+h4 {
+  color: #333;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+
+/* CONTENT STYLE */
+
+/* .content-container {
+  background-image: radial-gradient(at 15.72826799215623% 25.493277896613954%, hsla(194.76923076923075, 78.31325301204821%, 48.8235294117647%, 1) 0%, hsla(194.76923076923075, 78.31325301204821%, 48.8235294117647%, 0) 100%), radial-gradient(at 78.97276061616753% 1.33667754125244%, hsla(192.20338983050848, 70.23809523809523%, 67.05882352941177%, 1) 0%, hsla(192.20338983050848, 70.23809523809523%, 67.05882352941177%, 0) 100%), radial-gradient(at 75.84093081625203% 16.95725201146503%, hsla(179.04761904761907, 74.11764705882354%, 50%, 1) 0%, hsla(179.04761904761907, 74.11764705882354%, 50%, 0) 100%), radial-gradient(at 80.23228481234055% 24.400593679959282%, hsla(194.76923076923075, 78.31325301204821%, 48.8235294117647%, 1) 0%, hsla(194.76923076923075, 78.31325301204821%, 48.8235294117647%, 0) 100%), radial-gradient(at 73.75880237983483% 51.78228476087079%, hsla(192.20338983050848, 70.23809523809523%, 67.05882352941177%, 1) 0%, hsla(192.20338983050848, 70.23809523809523%, 67.05882352941177%, 0) 100%), radial-gradient(at 94.77399627513148% 69.77236721923126%, hsla(179.04761904761907, 74.11764705882354%, 50%, 1) 0%, hsla(179.04761904761907, 74.11764705882354%, 50%, 0) 100%), radial-gradient(at 42.35253303275681% 25.536919312454497%, hsla(194.76923076923075, 78.31325301204821%, 48.8235294117647%, 1) 0%, hsla(194.76923076923075, 78.31325301204821%, 48.8235294117647%, 0) 100%), radial-gradient(at 78.66055503639056% 36.38267062463774%, hsla(192.20338983050848, 70.23809523809523%, 67.05882352941177%, 1) 0%, hsla(192.20338983050848, 70.23809523809523%, 67.05882352941177%, 0) 100%), radial-gradient(at 14.76714630360425% 34.9344190584669%, hsla(179.04761904761907, 74.11764705882354%, 50%, 1) 0%, hsla(179.04761904761907, 74.11764705882354%, 50%, 0) 100%), radial-gradient(at 50.15166727583515% 58.37488289197592%, hsla(194.76923076923075, 78.31325301204821%, 48.8235294117647%, 1) 0%, hsla(194.76923076923075, 78.31325301204821%, 48.8235294117647%, 0) 100%), radial-gradient(at 16.70298770667533% 71.39009102263184%, hsla(192.20338983050848, 70.23809523809523%, 67.05882352941177%, 1) 0%, hsla(192.20338983050848, 70.23809523809523%, 67.05882352941177%, 0) 100%);
+} */
+
+/* CONTENT ANIMATION */
+
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* Start at the leftmost position */
+  }
+  100% {
+    transform: translateX(-100%); /* Move the container to the left, sliding it all the way */
+  }
+}
+
+.room-list-wrapper {
+  display: flex;
+  overflow-x: hidden; /* Hide overflow */
+}
+
+.room-list {
+  display: flex;
+  flex-direction: row;
+  animation: scroll 30s linear infinite; /* Apply the smooth scroll */
+}
+
+
+.room-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  background-color: #fff;
+  text-align: center;
+  animation: slide-in 0.5s ease-out;
+  opacity: 1;
+}
+
+.room-card-visible {
+  opacity: 1;
+  animation: slideIn 0.5s ease-out;
+}
+
+.fade-image {
+  opacity: 0;
+  animation: fadeInOut 3s infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* Apply styles to the scrollbar */
+.content-container::-webkit-scrollbar {
+  height: 10px; /* Height of the horizontal scrollbar */
+}
+
+.content-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* Color of the scroll thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.content-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* Color of the scrollbar track */
+  border-radius: 10px; /* Rounded corners for the scrollbar track */
+}
+
+.content-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker thumb when hovered */
+}
+
+
+
+/* FOOTER */
+
+
+.footer-content {
+  background-image: url(./assets/header.svg);
+  color: #000000;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.footer-section {
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #000000; /* Green color for section titles */
+}
+
+.footer-section p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #4CAF50; /* Change link color on hover */
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  color: #fff; /* White color for the icons */
+  border-radius: 50%;
+  margin: 0 10px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for the glass effect */
+}
+
+.social-icons a:hover {
+  background-color: rgba(76, 175, 80, 0.3); /* Greenish tint on hover */
+  color: #fff; /* Ensure the icon remains white on hover */
+}
+
+
+.footer-bottom {
+  font-size: 0.875rem;
+  color: #000000;
+  margin-top: 20px;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: #bbb;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+
+
+
+/* LOGIN */
+
+.form_email_username {
+  position: relative;
+  width: 24rem;
+  height: 3rem;
+}
+
+.form_password {
+  position: relative;
+  width: 24rem;
+  height: 3rem;
+}
+
+.input__email {
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  background-color: #00000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e1e5ee;
+  border-radius: 0.5rem;
+  color: #fff;
+  outline: none;
+  padding: 1.25rem;
+  background: none;
+  transition: all 160ms ease-in;
+}
+
+.input__email:hover {
+  border: 2px solid hsla(48, 100%, 50%, 0.771);
+}
+
+.input__email:focus {
+  border: 2px solid hsl(48, 100%, 50%);
+}
+
+.username_email__label {
+  position: absolute;
+  font-size: 18px;
+  left: 1rem;
+  top: 0.8rem;
+  padding: 0 0.5rem;
+  color: #fff;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background: none;
+}
+
+.input__email:focus ~ .username_email__label,
+.input__email:not(:placeholder-shown) ~ .username_email__label {
+  top: -0.5rem;
+  font-size: 1rem;
+  left: 0.8rem;
+  border-radius: 5px;
+  color: #000;
+  background-image: url(./assets/gradient-image.svg);
+}
+
+.input__password {
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  background-color: #00000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e1e5ee;
+  border-radius: 0.5rem;
+  color: #fff;
+  outline: none;
+  padding: 1.25rem;
+  background: none;
+  transition: all 160ms ease-in;
+}
+
+.input__password:hover {
+  border: 2px solid hsla(48, 100%, 50%, 0.771);
+}
+
+.input__password:focus {
+  border: 2px solid hsl(48, 100%, 50%);
+}
+
+.password_label {
+  position: absolute;
+  font-size: 18px;
+  left: 1rem;
+  top: 0.8rem;
+  padding: 0 0.5rem;
+  color: #fff;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+
+.input__password:focus ~ .password_label,
+.input__password:not(:placeholder-shown) ~ .password_label {
+  top: -0.5rem;
+  font-size: 1rem;
+  left: 0.8rem;
+  color: #000;
+  border-radius: 5px;
+  background-image: url(./assets/gradient-image.svg);
+}
